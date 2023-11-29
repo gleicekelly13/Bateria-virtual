@@ -28,10 +28,21 @@ const tocarSom = (letra) => {
 
 const adicionarEfeito = (letra) => document.getElementById(letra).classList.add('active');
 
-const removerEfeito = (letra) => document.getElementById(letra).classList.remove('active');
+const removerEfeito = (letra) => {
+    const div = document.getElementById(letra);
+    const removeActive = () => div.classList.remove('active');
+    div.addEventListener('transitionend', removeActive);
+}
 
-const ativarId = (Event) => {
-    const letra = Event.target.id;
+const ativarDiv = (Event) => {
+
+    let letra = '';
+    if(Event.type == 'click') {
+        letra = Event.target.id;
+    } else {
+        letra = Event.key.toUpperCase();
+    }
+
     const letraPermitida = sons.hasOwnProperty(letra);
     if (letraPermitida) {
         adicionarEfeito(letra);
@@ -40,8 +51,19 @@ const ativarId = (Event) => {
     }
 }
 
+/*const ativarId = (Event) => {
+    const letra = Event.target.id;
+    console.log(Event);
+    const letraPermitida = sons.hasOwnProperty(letra);
+    if (letraPermitida) {
+        adicionarEfeito(letra);
+        tocarSom(letra);
+        removerEfeito(letra);
+    }
+} */
+
 exibir(sons);
 
-document.getElementById('container').addEventListener('click', ativarId);
+document.getElementById('container').addEventListener('click', ativarDiv);
 
-window.addEventListener('keyup', ativarId);
+window.addEventListener('keyup', ativarDiv);
