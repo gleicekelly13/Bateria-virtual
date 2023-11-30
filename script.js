@@ -1,6 +1,6 @@
 'use strict';
 
-const sons = {
+const sons = { //Objeto sons, mapeando letras paa arquivos de som
     'A': 'boom.wav',
     'S': 'clap.wav',
     'D': 'hihat.wav',
@@ -57,3 +57,8 @@ exibir(sons);
 document.getElementById('container').addEventListener('click', ativarDiv);
 
 window.addEventListener('keyup', ativarDiv);
+
+
+/*
+* Function criarDiv //cria uma <div> para cada letra (tecla) no objeto `sons`. A classe `key` e o ID da div são definidos, e a div é adicionada ao elemento com o ID 'container'.
+*/
