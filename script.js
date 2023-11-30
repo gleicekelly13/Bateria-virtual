@@ -7,6 +7,7 @@ const sons = {
     'F': 'kick.wav',
     'G': 'openhat.wav',
     'H': 'ride.wav',
+    'J': 'snare.wav',
     'K': 'tink.wav',
     'L': 'tom.wav'
 }
@@ -32,7 +33,7 @@ const removerEfeito = (letra) => {
     const div = document.getElementById(letra);
     const removeActive = () => div.classList.remove('active');
     div.addEventListener('transitionend', removeActive);
-}
+} 
 
 const ativarDiv = (Event) => {
 
@@ -50,17 +51,6 @@ const ativarDiv = (Event) => {
         removerEfeito(letra);
     }
 }
-
-/*const ativarId = (Event) => {
-    const letra = Event.target.id;
-    console.log(Event);
-    const letraPermitida = sons.hasOwnProperty(letra);
-    if (letraPermitida) {
-        adicionarEfeito(letra);
-        tocarSom(letra);
-        removerEfeito(letra);
-    }
-} */
 
 exibir(sons);
 
