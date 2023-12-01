@@ -56,3 +56,16 @@ main {
     border-color: #ffcc00;
     box-shadow: 0 0 50px #ffcc00;
 }
+
+
+@media screen and (max-width:1024px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .key {
+        width: 90px;
+        height: 90px;
+    }
+}
