@@ -69,3 +69,22 @@ main {
         height: 90px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        background-position: center;
+    
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;  
+    
+    }
+
+    .key {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+}
